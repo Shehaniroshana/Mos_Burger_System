@@ -107,6 +107,7 @@ public class OrderServiceImpl implements OrderService {
 
             for (Object[] entry : result) {
                 if (entry[0].equals(order.getCustomerId()) && entry[1].equals(order.getOrderDate()) && entry[2].equals(order.getStatus())) {
+                    // If found, update the total amount
                     entry[3] = (Double) entry[3] + order.getTotalAmount();
                     found = true;
                     break;
